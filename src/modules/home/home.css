@@ -1,0 +1,277 @@
+/* ==========================================================================
+   SISTEMA PRM ASO HORIZONTE - src/modules/home/home.css
+   Estilos de la cola de atención diaria, triage y tarjetas de pacientes
+   ========================================================================== */
+
+/* Resumen Estadístico / Métricas Diarias */
+.home-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: #ffffff;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  letter-spacing: 0.04em;
+}
+
+.stat-value {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--slate-900);
+  line-height: 1.1;
+  margin-top: 0.25rem;
+}
+
+.stat-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.stat-icon.blue { background: var(--color-info-bg); color: var(--color-info); }
+.stat-icon.yellow { background: var(--color-warning-bg); color: var(--color-warning); }
+.stat-icon.green { background: var(--color-success-bg); color: var(--color-success); }
+.stat-icon.teal { background: var(--color-primary-light); color: var(--color-primary); }
+
+/* Layout de Atención: Formulario + Cola de Espera */
+.queue-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 1.75rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .queue-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Formulario de Ingreso Rápido */
+.ingress-card {
+  background: #ffffff;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 5rem;
+}
+
+.ingress-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--slate-100);
+}
+
+.ingress-card-title {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--slate-900);
+}
+
+/* Controles de Filtrado y Búsqueda de la Cola */
+.queue-controls-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.queue-filter-tabs {
+  display: flex;
+  gap: 0.4rem;
+  background: var(--slate-100);
+  padding: 0.25rem;
+  border-radius: var(--radius-md);
+}
+
+.queue-tab-btn {
+  border: none;
+  background: transparent;
+  padding: 0.45rem 0.85rem;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--slate-600);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.queue-tab-btn.active {
+  background: #ffffff;
+  color: var(--color-primary);
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+
+.queue-search-input {
+  max-width: 280px;
+}
+
+/* Lista de Tarjetas de Paciente */
+.queue-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Tarjeta de Paciente (PatientCard Component) */
+.patient-card {
+  background: #ffffff;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.4rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  position: relative;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  border-left: 5px solid var(--slate-300);
+}
+
+.patient-card:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Indicadores de Triaje en Borde */
+.patient-card.priority-urgente {
+  border-left-color: var(--color-danger);
+}
+
+.patient-card.priority-moderada {
+  border-left-color: var(--color-warning);
+}
+
+.patient-card.priority-normal {
+  border-left-color: var(--color-primary);
+}
+
+.patient-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.patient-identity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.patient-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--slate-900);
+}
+
+.patient-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--font-size-xs);
+  color: var(--slate-500);
+}
+
+.patient-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.patient-card-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.patient-reason-box {
+  background: var(--slate-50);
+  border: 1px solid var(--slate-100);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  font-size: var(--font-size-sm);
+  color: var(--slate-700);
+}
+
+.patient-reason-label {
+  font-weight: 600;
+  color: var(--slate-500);
+  margin-right: 0.4rem;
+}
+
+.patient-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--slate-100);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.patient-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Estado de lista vacía */
+.empty-queue-state {
+  background: #ffffff;
+  border: 2px dashed var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2rem;
+  text-align: center;
+  color: var(--slate-400);
+}
+
+.empty-queue-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 1rem auto;
+  color: var(--slate-300);
+}

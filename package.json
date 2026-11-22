@@ -1,0 +1,25 @@
+{
+  "name": "aso-horizonte-prm",
+  "version": "1.0.0",
+  "description": "Sistema PRM/CRM para la Gestión de Pacientes y Triaje - Ambulatorio Aso Horizonte",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "prm",
+    "crm",
+    "salud",
+    "clinica",
+    "vanilla-js",
+    "spa",
+    "vite"
+  ],
+  "author": "Equipo de Desarrollo Aso Horizonte",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}

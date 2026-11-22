@@ -1,0 +1,123 @@
+/* ==========================================================================
+   SISTEMA PRM ASO HORIZONTE - src/modules/personal/personal.css
+   Estilos del directorio de personal médico y administrativo en guardia
+   ========================================================================== */
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.25rem;
+}
+
+.staff-card {
+  background: #ffffff;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
+}
+
+.staff-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.staff-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.staff-avatar-wrapper {
+  position: relative;
+}
+
+.staff-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(15, 118, 110, 0.2);
+}
+
+.staff-status-indicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+
+.staff-status-indicator.online {
+  background-color: var(--color-success);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
+}
+
+.staff-status-indicator.busy {
+  background-color: var(--color-warning);
+}
+
+.staff-status-indicator.offline {
+  background-color: var(--slate-400);
+}
+
+.staff-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.staff-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--slate-900);
+}
+
+.staff-role {
+  font-size: var(--font-size-xs);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.staff-code {
+  font-size: var(--font-size-xs);
+  color: var(--slate-400);
+}
+
+.staff-info-box {
+  background: var(--slate-50);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: var(--font-size-xs);
+}
+
+.staff-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.staff-info-label {
+  color: var(--slate-500);
+  font-weight: 600;
+}
+
+.staff-info-value {
+  color: var(--slate-800);
+  font-weight: 700;
+}

@@ -1,0 +1,43 @@
+/* ==========================================================================
+   SISTEMA PRM ASO HORIZONTE - src/modules/medicamentos/medicamentos.css
+   Estilos para el control de insumos médicos y métricas de consumo mensual
+   ========================================================================== */
+
+.stock-progress-bar-bg {
+  width: 100%;
+  height: 8px;
+  background-color: var(--slate-200);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-top: 0.35rem;
+}
+
+.stock-progress-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.4s ease;
+}
+
+.stock-progress-bar-fill.optimo {
+  background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.stock-progress-bar-fill.bajo {
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+.stock-progress-bar-fill.critico {
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+.consumption-metric-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--slate-100);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--slate-700);
+}
