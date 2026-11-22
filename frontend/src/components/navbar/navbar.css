@@ -32,6 +32,10 @@
   text-decoration: none;
 }
 
+.menu__navbar-brand {
+  display: none;
+}
+
 .navbar-logo-icon {
   width: 40px;
   height: 40px;
@@ -222,5 +226,5 @@
 
 @media (max-width: 480px) {
   .navbar-brand {display: none;}
-  .menu__navbar-brand {padding: .3em; margin-top: .3em;}
+  .menu__navbar-brand {display: flex;padding: .3em; margin-top: .3em;}
 }

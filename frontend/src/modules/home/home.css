@@ -276,7 +276,41 @@
   color: var(--slate-300);
 }
 
-
 @media (max-width: 1024px) {
   .ingress-card {position:static;}
+}
+
+@media (max-width: 640px) {
+  /* clase nueva para esconder texto */
+  .hide_text_phone {
+    display: none;
+  }
+  /* clase nueva para mas padding en los botones */
+  .border_button_phone {
+    padding: 1em;
+  }
+  .queue-search-input {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .stat-card {
+    padding: 1rem;
+    min-width: 0;
+  }
+
+  .patient-card {
+    padding: 1rem;
+    min-width: 0;
+  }
+
+  .patient-card-top {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .queue-controls-bar {
+    flex-direction: column;
+  }
+  
 }

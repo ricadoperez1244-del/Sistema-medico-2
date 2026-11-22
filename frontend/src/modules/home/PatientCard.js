@@ -36,17 +36,17 @@ export class PatientCard {
     let actionButtons = '';
 
     if (status === 'en_espera') {
-      statusBadge = `<span class="badge badge-warning">En Sala de Espera</span>`;
+      statusBadge = `<span class="badge badge-warning">En <span class="hide_text_phone">Sala de</span> Espera</span>`;
       actionButtons = `
-        <button class="btn btn-sm btn-primary" data-action="attend" data-id="${id}">
+        <button class="btn btn-sm btn-primary border_button_phone" data-action="attend" data-id="${id}">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
           </svg>
-          <span>Llamar a Consulta</span>
+          <span>Llamar <span class="hide_text_phone">a Consulta</span></span>
         </button>
       `;
     } else if (status === 'en_consulta') {
-      statusBadge = `<span class="badge badge-info">En Consulta Médica</span>`;
+      statusBadge = `<span class="badge badge-info border_button_phone">En Consulta <span class="hide_text_phone">Médica</span></span>`;
       actionButtons = `
         <button class="btn btn-sm btn-secondary" style="border-color: var(--color-success); color: var(--color-success);" data-action="finish" data-id="${id}">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -81,7 +81,7 @@ export class PatientCard {
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                Llegada: <strong>${arrivalTime}</strong>
+                <span class="hide_text_phone">Llegada:</span> <strong>${arrivalTime}</strong>
               </span>
             </div>
           </div>
